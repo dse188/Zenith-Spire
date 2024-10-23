@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9decb59bee163541a56d600a4a1fc7d, type: 3}
   m_Name: Slime
   m_EditorClassIdentifier: 
-  enemyhealth: 70
+  enemyhealth: 50
   enemyDamage: 10
-  expReward: 25
+  expReward: 100000000

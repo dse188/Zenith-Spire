@@ -199,7 +199,7 @@ MonoBehaviour:
   rb: {fileID: 3011204523826755454}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   enemySO: {fileID: 11400000, guid: 7aab034e1ff1c9c49a4490130e79f670, type: 2}
   bullet: {fileID: 4403449676824007865, guid: 4c1aa65ccd1a6a74fad6412e1fb44790, type: 3}
   bulletPos: {fileID: 3342684201102702691}

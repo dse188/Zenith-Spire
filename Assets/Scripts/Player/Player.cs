@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
         //health = playerStat.playerHealth;
         playerStat.playerHealth = 100;
+        playerStat.maxHealth = 100;
         playerStat.playerExp = 0;
         playerStat.expToLevel = 100f;
     }

@@ -14,6 +14,8 @@ public class UpgradeButton : MonoBehaviour
     [SerializeField] PlayerStats_SO playerSO;
     [SerializeReference] PlayerMovement playerMovement;
 
+    private ListOfUpgrades currentUpgrade;  //Store the current upgrade for each button.
+
     public void SetImage(ListOfUpgrades upgrades)
     {
         icon.sprite = upgrades.icon;
@@ -27,9 +29,37 @@ public class UpgradeButton : MonoBehaviour
     public void SetDescription(ListOfUpgrades upgrades)
     {
         description.text = upgrades.description;
+        currentUpgrade = upgrades;
     }
 
-    public void SetDamageUpgrade(ListOfUpgrades upgrades)
+    public void ApplyUpgrade()
+    {
+        switch(currentUpgrade.upgradeType)
+        {
+            case UpgradeType.DamageUp:
+                weaponSO.attackDamage += 5f;
+                break;
+            case UpgradeType.AttackSpeedUp:
+                weaponSO.attackRate += 0.2f;
+                break;
+            case UpgradeType.RangeUp:
+                weaponSO.attackRange += 0.3f;
+                break;
+            case UpgradeType.HealthUp:
+                playerSO.maxHealth += 10f;
+                break;
+            case UpgradeType.SpeedUp:
+                playerMovement.movementSpeed += 0.5f;
+                break;
+        }
+    }
+
+    public void OnButtonPressed()
+    {
+        FindObjectOfType<LevelUpWindow>().Upgrade(transform.GetSiblingIndex());
+    }
+
+    /*public void SetDamageUpgrade(ListOfUpgrades upgrades)
     {
         float damageUp = 5f;
         if (upgrades.upgradeType == UpgradeType.DamageUp)
@@ -58,7 +88,7 @@ public class UpgradeButton : MonoBehaviour
         float healthUp = 10f;
         if (upgrades.upgradeType == UpgradeType.HealthUp)
         {
-            playerSO.playerHealth += healthUp;
+            playerSO.maxHealth += healthUp;
         }
     }
     public void SetSpeedUpgrade(ListOfUpgrades upgrades)
@@ -68,5 +98,5 @@ public class UpgradeButton : MonoBehaviour
         {
             playerMovement.movementSpeed += speedUp;
         }
-    }
+    }*/
 }

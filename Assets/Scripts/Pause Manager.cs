@@ -5,6 +5,8 @@ using UnityEngine;
 public class PauseManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] SpeedUpUI speedUpUI;
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -12,6 +14,7 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
+        Time.timeScale = speedUpUI.gameSpeed;
     }
 }

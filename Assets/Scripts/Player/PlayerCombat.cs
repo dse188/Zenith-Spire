@@ -10,6 +10,9 @@ public class PlayerCombat : MonoBehaviour
     float timer;
 
     [SerializeField] Animator animator;
+    [SerializeField] GameObject weaponGameObject;
+    [SerializeField] ParticleSystem weaponParticles;
+    [SerializeField] float swordAnimationCompleteTime;
 
     private void Start()
     {
@@ -25,10 +28,14 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
             timer = weaponSO.attackRate;
+            StartCoroutine(SwordAnimation());
+            //weaponGameObject.SetActive(false);
         }
     }
     private void Attack()
     {
+        weaponGameObject.SetActive(true);
+        weaponParticles.Play();
         animator.SetTrigger("Attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, weaponSO.attackRange, enemyLayer);
@@ -47,4 +54,10 @@ public class PlayerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, weaponSO.attackRange);
     }
 
+    private IEnumerator SwordAnimation()
+    {
+        yield return new WaitForSeconds(swordAnimationCompleteTime);
+        weaponGameObject.SetActive(false);
+        weaponParticles.Stop();
+    }
 }

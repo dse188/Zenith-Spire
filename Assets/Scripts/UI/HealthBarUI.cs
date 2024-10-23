@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBarUI : MonoBehaviour
 {
@@ -14,10 +15,13 @@ public class HealthBarUI : MonoBehaviour
     //[SerializeField] Enemy enemyCurrentHealth;
 
     // Start is called before the first frame update
+
+    [SerializeField] TextMeshProUGUI healthText;
     private void Start()
     {
         playerHealth.minValue = 0;
-        playerHealth.maxValue = playerSO.playerHealth;
+        playerHealth.maxValue = playerSO.maxHealth;
+        playerHealth.value = playerSO.maxHealth;
 
 
         /*if (enemyCurrentHealth == null)
@@ -35,7 +39,9 @@ public class HealthBarUI : MonoBehaviour
     private void Update()
     {
         playerHealth.value = playerCurrentHealth.health;
+        playerHealth.maxValue = playerSO.maxHealth;
 
+        healthText.text = playerCurrentHealth.health.ToString(); ;
         /*if(enemyCurrentHealth != null)
         {
             enemyHealth.value = enemyCurrentHealth.health;

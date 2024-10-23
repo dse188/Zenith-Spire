@@ -31,11 +31,12 @@ public class LevelUpWindow : MonoBehaviour
             upgradeButtons[i].SetImage(listOfUpgrades[i]);
             upgradeButtons[i].SetName(listOfUpgrades[i]);
             upgradeButtons[i].SetDescription(listOfUpgrades[i]);
-            upgradeButtons[i].SetDamageUpgrade(listOfUpgrades[i]);
+/*            upgradeButtons[i].SetDamageUpgrade(listOfUpgrades[i]);
             upgradeButtons[i].SetAttackSpeedUpgrade(listOfUpgrades[i]);
             upgradeButtons[i].SetRangeUpgrade(listOfUpgrades[i]);
             upgradeButtons[i].SetHealthUpgrade(listOfUpgrades[i]);
             upgradeButtons[i].SetSpeedUpgrade(listOfUpgrades[i]);
+*/
         }
     }
 
@@ -47,7 +48,8 @@ public class LevelUpWindow : MonoBehaviour
 
     public void Upgrade(int pressedButtonID)
     {
-        GameManager.instance.playerTransform.GetComponent<Player>().Upgrade(pressedButtonID);
+        //GameManager.instance.playerTransform.GetComponent<Player>().Upgrade(pressedButtonID);
+        upgradeButtons[pressedButtonID].ApplyUpgrade();
         CloseWindow();
     }
 }
