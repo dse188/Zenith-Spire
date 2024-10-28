@@ -16,6 +16,9 @@ public class UpgradeButton : MonoBehaviour
 
     private ListOfUpgrades currentUpgrade;  //Store the current upgrade for each button.
 
+    [SerializeField] GameObject heavySword;
+    //[SerializeField] GameObject swordParticles;
+
     public void SetImage(ListOfUpgrades upgrades)
     {
         icon.sprite = upgrades.icon;
@@ -40,10 +43,16 @@ public class UpgradeButton : MonoBehaviour
                 weaponSO.attackDamage += 5f;
                 break;
             case UpgradeType.AttackSpeedUp:
-                weaponSO.attackRate += 0.2f;
+                weaponSO.attackRate -= 0.2f;
                 break;
             case UpgradeType.RangeUp:
                 weaponSO.attackRange += 0.3f;
+
+                Vector3 swordNewScale = heavySword.transform.localScale;
+                swordNewScale.x += 0.075f;
+                swordNewScale.y += 0.15f;
+                swordNewScale.z += 0f;
+                heavySword.transform.localScale = swordNewScale;
                 break;
             case UpgradeType.HealthUp:
                 playerSO.maxHealth += 10f;

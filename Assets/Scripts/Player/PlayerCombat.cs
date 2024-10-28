@@ -20,6 +20,8 @@ public class PlayerCombat : MonoBehaviour
         weaponSO.attackDamage = 25;
         weaponSO.attackRange = 2.5f;
         weaponSO.attackRate = 2f;
+
+        weaponParticles.Stop();
     }
     private void Update()
     {
