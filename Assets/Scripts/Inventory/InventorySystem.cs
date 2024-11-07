@@ -6,14 +6,14 @@ using TMPro;
 
 public class InventorySystem : MonoBehaviour
 {
-    [SerializeField] List<Image> inventorySlotImage;
+    [SerializeField] public List<Image> inventorySlotImage;
     [SerializeField] public List<ItemPickUp> pickedupItems;
 
     // Start is called before the first frame update
     void Start()
     {
         //Initialize the inventory slots as empty at the start.
-        for(int i = 0; i < inventorySlotImage.Count; i++)
+        for (int i = 0; i < inventorySlotImage.Count; i++)
         {
             inventorySlotImage[i].enabled = false;
         }
@@ -29,6 +29,7 @@ public class InventorySystem : MonoBehaviour
             int slotIndex = pickedupItems.Count - 1;
             inventorySlotImage[slotIndex].sprite = item.weaponSO.icon;
             inventorySlotImage[slotIndex].enabled = true;
+            Debug.Log("Something  Something  Something  Something  Something  Something  Something  Something  ");
         }
         else
         {

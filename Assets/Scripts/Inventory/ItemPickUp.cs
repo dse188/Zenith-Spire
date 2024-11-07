@@ -18,8 +18,11 @@ public class ItemPickUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            inventorySystem.pickedupItems.Add(this);
-            Destroy(gameObject);
+            //inventorySystem.pickedupItems.Add(this);
+            inventorySystem.AdditemToInventory(this);
+            //Destroy(gameObject);
+
+            //Debug.Log("Picked up items count = :" + inventorySystem.pickedupItems.Count);
         }
     }
 }
