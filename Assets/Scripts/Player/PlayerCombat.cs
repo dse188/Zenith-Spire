@@ -28,13 +28,13 @@ public class PlayerCombat : MonoBehaviour
         timer = timer - Time.deltaTime;
         if(timer <= 0)
         {
-            Attack();
+            SpinSword();
             timer = weaponSO.attackRate;
             StartCoroutine(SwordAnimation());
             //weaponGameObject.SetActive(false);
         }
     }
-    private void Attack()
+    private void SpinSword()    //Attack()
     {
         weaponGameObject.SetActive(true);
         weaponParticles.Play();

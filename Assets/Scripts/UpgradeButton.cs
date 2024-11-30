@@ -46,11 +46,11 @@ public class UpgradeButton : MonoBehaviour
                 weaponSO.attackRate -= 0.2f;
                 break;
             case UpgradeType.RangeUp:
-                weaponSO.attackRange += 0.3f;
+                weaponSO.attackRange += 0.1f;   //0.3
 
                 Vector3 swordNewScale = heavySword.transform.localScale;
-                swordNewScale.x += 0.075f;
-                swordNewScale.y += 0.15f;
+                swordNewScale.x += 0.025f;  //0.075
+                swordNewScale.y += 0.05f;   //0.15
                 swordNewScale.z += 0f;
                 heavySword.transform.localScale = swordNewScale;
                 break;

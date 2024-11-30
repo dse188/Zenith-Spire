@@ -41,7 +41,7 @@ public class EnemyAI : MonoBehaviour
         if(timer <= 0)
         {
             timer = bulletRate;
-            ShootBullet();
+            //ShootBullet();
         }
 
         if (playerPosition != null)

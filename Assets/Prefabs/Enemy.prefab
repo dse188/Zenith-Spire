@@ -466,8 +466,11 @@ MonoBehaviour:
   rb: {fileID: 4230431228182231914}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   enemySO: {fileID: 11400000, guid: 7aab034e1ff1c9c49a4490130e79f670, type: 2}
+  bullet: {fileID: 0}
+  bulletPos: {fileID: 0}
+  bulletRate: 0
 --- !u!114 &4220946245576561019
 MonoBehaviour:
   m_ObjectHideFlags: 0

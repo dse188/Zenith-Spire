@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - F1_Boss
+  - Blockade
+  - slime
+  - EXP
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - Sword
   - Player
   - Enemy
-  - 
+  - Foreground
   - Background
   - 
   - 
@@ -44,6 +48,18 @@ TagManager:
   - name: Background
     uniqueID: 2143885621
     locked: 0
+  - name: Foreground
+    uniqueID: 2449749383
+    locked: 0
+  - name: Blockade
+    uniqueID: 2239676135
+    locked: 0
+  - name: EXP
+    uniqueID: 1935777467
+    locked: 0
   - name: Player
     uniqueID: 1759626471
+    locked: 0
+  - name: Skills
+    uniqueID: 1481137717
     locked: 0

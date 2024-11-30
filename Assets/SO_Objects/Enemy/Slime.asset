@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyhealth: 50
   enemyDamage: 10
-  expReward: 100000000
+  expReward: 1e+15

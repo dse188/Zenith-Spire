@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5159402729879334649}
   m_Layer: 7
   m_Name: Enemy 1
-  m_TagString: Untagged
+  m_TagString: slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1759626471
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 823293373, guid: feb517f56026cf94299367f0de87e7ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
-  moveSpeed: 2
+  moveSpeed: 1
   rb: {fileID: 3011204523826755454}
   playerLayer:
     serializedVersion: 2
@@ -218,4 +218,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStat: {fileID: 11400000, guid: 7aab034e1ff1c9c49a4490130e79f670, type: 2}
   health: 0
-  player: {fileID: 0}
+  isDead: 0
+  loot: {fileID: 4365960769801527631, guid: 3e1d759fb2bab2b4a9d1995db95180a3, type: 3}
+  expDrop: {fileID: 712987966314053044, guid: 88a139051c5783a499ede0dc21bb78aa, type: 3}
