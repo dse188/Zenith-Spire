@@ -10,6 +10,8 @@ public class InventorySystem : MonoBehaviour
     //[SerializeField] public List<ItemPickUp> pickedupItems;
     [SerializeField] public List<LootSystem> pickedupItems;
 
+    [SerializeField] public List<Image> inventoryEquipedImage;
+
     // Start is called before the first frame update
     void Start()
     {

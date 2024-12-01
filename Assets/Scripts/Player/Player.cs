@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] PlayerStats_SO playerStat;
+    public PlayerStats_SO playerStat;
 
     public float health;
     public int level;

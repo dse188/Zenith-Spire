@@ -10,4 +10,8 @@ public class PlayerStats_SO : ScriptableObject
     public int currentLevel;
     public float playerExp;
     public float expToLevel;
+
+    public float strength;
+    public float dexterity;
+    public float intelligence;
 }

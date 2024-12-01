@@ -17,3 +17,6 @@ MonoBehaviour:
   currentLevel: 9
   playerExp: 275
   expToLevel: 429.98166
+  strength: 10
+  dexterity: 10
+  intelligence: 10

@@ -9,10 +9,21 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] Transform attackPoint;
     float timer;
 
+    [Header("Spin Attack")]
     [SerializeField] Animator animator;
     [SerializeField] GameObject weaponGameObject;
     [SerializeField] ParticleSystem weaponParticles;
     [SerializeField] float swordAnimationCompleteTime;
+
+    //Ice Spear
+    [Header("Ice Spear")]
+    [SerializeField] GameObject iceSpear;
+    [SerializeField] Transform spearAttackPoint; //Always at the front of player
+    [SerializeField] float iceSpearRate;
+    [SerializeField] float force;
+    float spearTimer;
+    float destroyTimer = 0;
+
 
     private void Start()
     {
@@ -22,9 +33,13 @@ public class PlayerCombat : MonoBehaviour
         weaponSO.attackRate = 2f;
 
         weaponParticles.Stop();
+
+        //Ice Spear
+        spearTimer = 1.5f;
     }
     private void Update()
     {
+        //Spin Attack
         timer = timer - Time.deltaTime;
         if(timer <= 0)
         {
@@ -33,6 +48,15 @@ public class PlayerCombat : MonoBehaviour
             StartCoroutine(SwordAnimation());
             //weaponGameObject.SetActive(false);
         }
+
+        //Ice Spear
+        spearTimer = spearTimer - Time.deltaTime;
+        if(spearTimer <= 0)
+        {
+            IceSpear();
+            spearTimer = iceSpearRate;
+        }
+
     }
     private void SpinSword()    //Attack()
     {
@@ -46,6 +70,31 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<Enemy>().TakeDamage(weaponSO.attackDamage);
         }
+    }
+
+    private void IceSpear()
+    {
+        //Fire my iceSpear gameObject towards my cursor(mouse position).
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+
+        Vector2 direction = (mousePosition - spearAttackPoint.position).normalized;
+
+        GameObject spear = Instantiate(iceSpear, spearAttackPoint.position, Quaternion.identity);
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        spear.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        Rigidbody2D rb = spear.GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+
+
+        /*if (rb!= null)
+        {
+            //rb.AddForce(direction * force, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+
+        }*/
     }
 
     private void OnDrawGizmosSelected()
