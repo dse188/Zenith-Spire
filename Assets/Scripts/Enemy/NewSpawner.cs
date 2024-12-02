@@ -11,6 +11,7 @@ public class NewSpawner : MonoBehaviour
     public float numEnemiesPresent;
     private float timer;
     public float globalTimer;
+    public float formationTimer;
 
     [SerializeField] GameObject f1_Boss;
     bool f1_BossHasSpawned = false;
@@ -23,6 +24,7 @@ public class NewSpawner : MonoBehaviour
     {
         timer = spawnRate;
         globalTimer = 0f;
+        formationTimer = 0f;
 
         numEnemiesPresent = 0;
         //Instantiate(f1_Boss, new Vector3(-7, 1, 0), Quaternion.identity);
@@ -31,6 +33,7 @@ public class NewSpawner : MonoBehaviour
     private void Update()
     {
         globalTimer += Time.deltaTime;
+        formationTimer += Time.deltaTime;
 
         if (numEnemiesPresent >= 50)
         {
@@ -41,13 +44,18 @@ public class NewSpawner : MonoBehaviour
             canSpawn = true;
         }
         timer -= Time.deltaTime;
-        if(timer <= 0 && canSpawn)
+        if(timer <= 0 && globalTimer < 80f && canSpawn)
         {
-            SpawnEnemy();
+            SpawnEnemySlimes();
+            timer = spawnRate;
+        }
+        if (timer <= 0 && (globalTimer >= 80f) && canSpawn)
+        {
+            SpawnEnemyGhosts();
             timer = spawnRate;
         }
 
-        if (Mathf.Abs(globalTimer%40.0f) < 0.01f && !hasSpawnedCircleFormation && canSpawn)
+        if (formationTimer >= 60.0f && Mathf.Abs(formationTimer%60.0f) < 0.01f && !hasSpawnedCircleFormation && canSpawn)
         {
             SpawnCircleFormation();
             hasSpawnedCircleFormation = true;
@@ -70,13 +78,22 @@ public class NewSpawner : MonoBehaviour
         return spawnPos;
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemySlimes()
     {
             int randomEnemy = Random.Range(0, enemyPrefab.Length);
-            GameObject enemyToSpawn = enemyPrefab[randomEnemy];
+            GameObject enemyToSpawn = enemyPrefab[0];
             Instantiate(enemyToSpawn, GetRandomPos(), Quaternion.identity);
 
             numEnemiesPresent++;
+    }
+
+    private void SpawnEnemyGhosts()
+    {
+        int randomEnemy = Random.Range(0, enemyPrefab.Length);
+        GameObject enemyToSpawn = enemyPrefab[randomEnemy];
+        Instantiate(enemyToSpawn, GetRandomPos(), Quaternion.identity);
+
+        numEnemiesPresent++;
     }
 
     private Vector2 GetPlayerPos()

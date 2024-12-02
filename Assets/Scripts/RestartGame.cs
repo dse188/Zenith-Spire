@@ -14,7 +14,8 @@ public class RestartGame : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenuScene");
         gameOverWindow.CloseWindow();
     }
 }

@@ -46,7 +46,7 @@ public class IceSpearScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("slime") || other.gameObject.CompareTag("F1_Boss"))
+        if (other.gameObject.CompareTag("slime") || other.gameObject.CompareTag("F1_Boss") || other.gameObject.CompareTag("Enemy"))
         {
             isHit = true;
             Enemy hitEnemy = other.GetComponent<Enemy>();
@@ -70,7 +70,7 @@ public class IceSpearScript : MonoBehaviour
     {
         //iceSpearHitAnimator.SetBool("isHit", true);
         iceSpearHitAnimator.SetTrigger("EnemyHit");
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         Destroy(this.gameObject);
     }
 }

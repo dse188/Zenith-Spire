@@ -21,5 +21,6 @@ public class GameOverWindow : MonoBehaviour
     public void CloseWindow()
     {
         gameOverWindow.SetActive(false);
+        pauseManager.ResumeGame();
     }
 }

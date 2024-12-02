@@ -29,6 +29,10 @@ public class Player : MonoBehaviour
         playerStat.maxHealth = 100;
         playerStat.playerExp = 0;
         playerStat.expToLevel = 100f;
+
+        playerStat.strength = 10;
+        playerStat.intelligence = 10;
+        playerStat.dexterity = 10;
     }
 
     private void Update()
