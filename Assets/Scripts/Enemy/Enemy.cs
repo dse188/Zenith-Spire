@@ -17,6 +17,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject expDrop;
     //[SerializeField] List<GameObject> expDrop;
 
+    [SerializeField] GameManager gm;
+
+    [Header("Animation Stuffs")]
+    [SerializeField] Animator enemyAnimator;
+
+
     private void Start()
     {
         health = enemyStat.enemyhealth;
@@ -27,6 +33,7 @@ public class Enemy : MonoBehaviour
         newSpawner = NewSpawner.FindAnyObjectByType<NewSpawner>();
         blockade = GameObject.FindGameObjectWithTag("Blockade");
         //expDrop = GameObject.FindGameObjectWithTag("EXP");
+        gm = GameManager.FindObjectOfType<GameManager>();
     }
 
     public void TakeDamage(float damage)
@@ -40,6 +47,9 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        
+        //StartCoroutine(DeathAnimation());
+
         isDead = true;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
@@ -69,6 +79,7 @@ public class Enemy : MonoBehaviour
         }
 
         DropEXP();
+        gm.GetComponent<EnemyScore>().KillCounter();
 
     }
 
@@ -82,4 +93,11 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(expDrop, gameObject.transform.position, Quaternion.identity);
     }
+
+/*    private IEnumerator DeathAnimation()
+    {
+        //enemyAnimator.SetBool("isDead", true);
+        enemyAnimator.SetTrigger("Death");
+        yield return new WaitForSeconds(0.15f);
+    }*/
 }

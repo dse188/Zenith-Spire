@@ -9,15 +9,16 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] Transform attackPoint;
     float timer;
 
-    [Header("Spin Attack")]
+    [Header("Spin Slash")]
     [SerializeField] Animator animator;
     [SerializeField] GameObject weaponGameObject;
     [SerializeField] ParticleSystem weaponParticles;
     [SerializeField] float swordAnimationCompleteTime;
 
-    //Ice Spear
     [Header("Ice Spear")]
     [SerializeField] GameObject iceSpear;
+    public bool isSkillObtained;
+    public int iceSpearLearned;
     [SerializeField] Transform spearAttackPoint; //Always at the front of player
     [SerializeField] float iceSpearRate;
     [SerializeField] float force;
@@ -36,29 +37,36 @@ public class PlayerCombat : MonoBehaviour
 
         //Ice Spear
         spearTimer = 1.5f;
+        isSkillObtained = true;
+        iceSpearLearned = 0;
     }
     private void Update()
     {
+
         //Spin Attack
         timer = timer - Time.deltaTime;
         if(timer <= 0)
         {
-            SpinSword();
+            SpinSlash();
             timer = weaponSO.attackRate;
             StartCoroutine(SwordAnimation());
+            /*Debug.Log(upgradeButton[0].isIceSpearLearned);
+            Debug.Log(upgradeButton[1].isIceSpearLearned);
+            Debug.Log(upgradeButton[2].isIceSpearLearned);*/
             //weaponGameObject.SetActive(false);
         }
 
         //Ice Spear
         spearTimer = spearTimer - Time.deltaTime;
-        if(spearTimer <= 0)
+        //if(spearTimer <= 0 && isSkillObtained == true)
+        if (spearTimer <= 0 && iceSpearLearned >= 1)
         {
             IceSpear();
             spearTimer = iceSpearRate;
         }
 
     }
-    private void SpinSword()    //Attack()
+    private void SpinSlash()    //Attack()
     {
         weaponGameObject.SetActive(true);
         weaponParticles.Play();

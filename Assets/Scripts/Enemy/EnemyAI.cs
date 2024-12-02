@@ -10,14 +10,17 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
     [SerializeField] EnemyStat_SO enemySO;
 
+    [Header("Damage Calculation stuffs")]
     private bool isPlayerInContact = false;
     private float damageInterval = 0.8f;
     private Coroutine damageCoroutine;
 
+    [Header("Bullet Stuffs")]
     [SerializeField] GameObject bullet;
     [SerializeField] Transform bulletPos;
     [SerializeField] float bulletRate;
     float timer;
+
 
     private void Start()
     {

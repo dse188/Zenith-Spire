@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 3
   upgradeName: Health+
+  affectedSkill: 'Skill: None'
   description: Increase max health by 10
-  icon: {fileID: 21300000, guid: 24d832ef5857ef44cb8f2bea400b052d, type: 3}
+  icon: {fileID: 21300000, guid: 4a118092a230e9e45a9b314d518b3ff9, type: 3}

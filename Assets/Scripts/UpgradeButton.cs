@@ -8,6 +8,7 @@ public class UpgradeButton : MonoBehaviour
 {
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI upgradeName;
+    [SerializeField] TextMeshProUGUI affectedSkill;
     [SerializeField] TextMeshProUGUI description;
 
     [SerializeField] WeaponSO weaponSO;
@@ -18,6 +19,17 @@ public class UpgradeButton : MonoBehaviour
 
     [SerializeField] GameObject heavySword;
     //[SerializeField] GameObject swordParticles;
+    [SerializeField]private PlayerCombat player;
+    //[SerializeField] GameObject player;
+
+    public bool isIceSpearLearned;
+
+
+    private void Start()
+    {
+        //isIceSpearLearned = false;
+        player = PlayerCombat.FindAnyObjectByType<PlayerCombat>();
+    }
 
     public void SetImage(ListOfUpgrades upgrades)
     {
@@ -27,6 +39,11 @@ public class UpgradeButton : MonoBehaviour
     public void SetName(ListOfUpgrades upgrades)
     {
         upgradeName.text = upgrades.upgradeName;
+    }
+
+    public void SetAffectedSkill(ListOfUpgrades upgrades)
+    {
+        affectedSkill.text = upgrades.affectedSkill;
     }
 
     public void SetDescription(ListOfUpgrades upgrades)
@@ -59,6 +76,12 @@ public class UpgradeButton : MonoBehaviour
                 break;
             case UpgradeType.SpeedUp:
                 playerMovement.movementSpeed += 0.5f;
+                break;
+            case UpgradeType.LearnSkill:
+                //player.GetComponent<PlayerCombat>().isSkillObtained = true;
+                //player.isSkillObtained = true;
+                player.iceSpearLearned += 1;
+                playerSO.intelligence += 5;
                 break;
         }
     }

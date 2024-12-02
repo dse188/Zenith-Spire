@@ -7,6 +7,12 @@ public class UpgradeOption : MonoBehaviour
     [SerializeField] WeaponSO weaponSO;
     [SerializeField] PlayerStats_SO playerSO;
     [SerializeReference] PlayerMovement playerMovement;
+    Player player;
+
+    private void Start()
+    {
+        player = Player.FindAnyObjectByType<Player>();
+    }
 
     public void DamageUpgrade(ListOfUpgrades upgrades)
     {
@@ -46,6 +52,15 @@ public class UpgradeOption : MonoBehaviour
         if (upgrades.upgradeType == UpgradeType.SpeedUp)
         {
             playerMovement.movementSpeed += speedUp;
+        }
+    }
+
+    public void LearnSkill(ListOfUpgrades upgrades)
+    {
+        if(upgrades.upgradeType == UpgradeType.LearnSkill)
+        {
+            //learn skill
+            player.GetComponent<PlayerCombat>().isSkillObtained = true;
         }
     }
 }

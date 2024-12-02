@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 2
   upgradeName: Range+
+  affectedSkill: 'Skill: Sword Spin'
   description: Increase range by 0.3
-  icon: {fileID: 21300000, guid: 4b0082b6165f24e41aa348c8e42fcfda, type: 3}
+  icon: {fileID: 21300000, guid: eeb77c7e2e26965458a7a5b99330fc7f, type: 3}

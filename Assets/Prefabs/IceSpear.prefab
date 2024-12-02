@@ -168,7 +168,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012097359, y: -0.018146321}
+  m_Offset: {x: -0.21849072, y: -0.018146321}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -179,7 +179,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66930723, y: 0.29433057}
+  m_Size: {x: 0.2565205, y: 0.29433057}
   m_EdgeRadius: 0
 --- !u!114 &4993997676112448082
 MonoBehaviour:
@@ -193,5 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66245c9e35f49e540a6c2766511894b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intMultiplier: 0
+  isHit: 0
   destroyTimer: 1.5
+  intMultiplier: 0
+  iceSpearHitAnimator: {fileID: 1612094434961303877}
+  iceSpear_Hit_Prefab: {fileID: 4494286812936912215, guid: fb225742411bce54983c6fab27504280, type: 3}

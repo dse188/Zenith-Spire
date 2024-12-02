@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 4
   upgradeName: Speed+
+  affectedSkill: 'Skill: None'
   description: Increase movement speed by 0.5
-  icon: {fileID: 21300000, guid: b23ea5bbe303b584db3ecc5fff31b729, type: 3}
+  icon: {fileID: 21300000, guid: c85265bdcd6234c42bac2c955f1d3274, type: 3}

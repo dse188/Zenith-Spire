@@ -30,6 +30,7 @@ public class LevelUpWindow : MonoBehaviour
         {
             upgradeButtons[i].SetImage(listOfUpgrades[i]);
             upgradeButtons[i].SetName(listOfUpgrades[i]);
+            upgradeButtons[i].SetAffectedSkill(listOfUpgrades[i]);
             upgradeButtons[i].SetDescription(listOfUpgrades[i]);
 /*            upgradeButtons[i].SetDamageUpgrade(listOfUpgrades[i]);
             upgradeButtons[i].SetAttackSpeedUpgrade(listOfUpgrades[i]);

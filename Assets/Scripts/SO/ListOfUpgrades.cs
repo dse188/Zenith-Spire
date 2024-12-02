@@ -8,7 +8,8 @@ public enum UpgradeType
     AttackSpeedUp,
     RangeUp,
     HealthUp,
-    SpeedUp
+    SpeedUp,
+    LearnSkill
 }
 
 [CreateAssetMenu(fileName = "Upgrades", menuName = "Upgrades")]
@@ -16,6 +17,7 @@ public class ListOfUpgrades : ScriptableObject
 {
     public UpgradeType upgradeType;
     public string upgradeName;
+    public string affectedSkill;
     public string description;
     public Sprite icon;
 
