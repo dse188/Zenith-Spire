@@ -17,8 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] List<ListOfUpgrades> upgrades;
     [SerializeField] List<ListOfUpgrades> selectUpgrade;
     [SerializeField] List<ListOfUpgrades> acquiredUpgrades;
-
-    
+  
 
     private void Start()
     {
@@ -70,12 +69,10 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         playerStat.playerExp = 0;
-
         playerStat.currentLevel++;
         playerStat.expToLevel += (playerStat.expToLevel * 0.2f);
 
-
-        if(selectUpgrade == null)
+        if (selectUpgrade == null)
         {
             selectUpgrade = new List<ListOfUpgrades>();
         }
@@ -89,7 +86,7 @@ public class Player : MonoBehaviour
     {
         ListOfUpgrades upgradeObj = selectUpgrade[selectedUpgradeID];
 
-        if(acquiredUpgrades == null)
+        if (acquiredUpgrades == null)
         {
             acquiredUpgrades = new List<ListOfUpgrades>();
         }
@@ -98,16 +95,44 @@ public class Player : MonoBehaviour
 
     public List<ListOfUpgrades> GetUpgrades(int count)
     {
-        List<ListOfUpgrades> upgradeList = new List<ListOfUpgrades>();
+        /*List<ListOfUpgrades> upgradeList = new List<ListOfUpgrades>();
+        
 
         if(count > upgrades.Count)
         {
             count = upgrades.Count; //Basically, if there are not enough upgrades available then only show the available upgrades.
         }
 
-        for(int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
-            upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+            int randomIndex = Random.Range(0, upgrades.Count);
+            upgradeList.Add(upgrades[randomIndex]);
+            upgrades.RemoveAt(randomIndex);
+            //upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+        }
+
+        return upgradeList;*/
+
+        List<ListOfUpgrades> upgradeList = new List<ListOfUpgrades>();
+        HashSet<int> selectedIndices = new HashSet<int>();
+
+        if (upgrades.Count < count)
+        {
+            // If not enough unique upgrades, replenish from acquiredUpgrades
+            upgrades.AddRange(acquiredUpgrades);
+            acquiredUpgrades.Clear();
+        }
+
+        while (upgradeList.Count < count && upgrades.Count > 0)
+        {
+            int randomIndex = Random.Range(0, upgrades.Count);
+
+            // Ensure no duplicates within this level-up
+            if (!selectedIndices.Contains(randomIndex))
+            {
+                selectedIndices.Add(randomIndex);
+                upgradeList.Add(upgrades[randomIndex]);
+            }
         }
 
         return upgradeList;

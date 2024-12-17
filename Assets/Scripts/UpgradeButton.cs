@@ -90,45 +90,4 @@ public class UpgradeButton : MonoBehaviour
     {
         FindObjectOfType<LevelUpWindow>().Upgrade(transform.GetSiblingIndex());
     }
-
-    /*public void SetDamageUpgrade(ListOfUpgrades upgrades)
-    {
-        float damageUp = 5f;
-        if (upgrades.upgradeType == UpgradeType.DamageUp)
-        {
-            weaponSO.attackDamage += damageUp;
-        }
-    }
-    public void SetAttackSpeedUpgrade(ListOfUpgrades upgrades)
-    {
-        float attackSpeed = 0.2f;
-        if (upgrades.upgradeType == UpgradeType.AttackSpeedUp)
-        {
-            weaponSO.attackRate -= attackSpeed;
-        }
-    }
-    public void SetRangeUpgrade(ListOfUpgrades upgrades)
-    {
-        float rangeUp = 0.3f;
-        if (upgrades.upgradeType == UpgradeType.RangeUp)
-        {
-            weaponSO.attackRange += rangeUp;
-        }
-    }
-    public void SetHealthUpgrade(ListOfUpgrades upgrades)
-    {
-        float healthUp = 10f;
-        if (upgrades.upgradeType == UpgradeType.HealthUp)
-        {
-            playerSO.maxHealth += healthUp;
-        }
-    }
-    public void SetSpeedUpgrade(ListOfUpgrades upgrades)
-    {
-        float speedUp = 0.5f;
-        if (upgrades.upgradeType == UpgradeType.SpeedUp)
-        {
-            playerMovement.movementSpeed += speedUp;
-        }
-    }*/
 }

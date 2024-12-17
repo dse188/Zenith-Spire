@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1759626471
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 823293373, guid: feb517f56026cf94299367f0de87e7ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -221,4 +221,6 @@ MonoBehaviour:
   isDead: 0
   loot: {fileID: 4365960769801527631, guid: 3e1d759fb2bab2b4a9d1995db95180a3, type: 3}
   expDrop: {fileID: 712987966314053044, guid: 88a139051c5783a499ede0dc21bb78aa, type: 3}
+  gm: {fileID: 0}
   enemyAnimator: {fileID: 1216614524349640809}
+  torches: []

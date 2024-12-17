@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Enemy : MonoBehaviour
 {
@@ -19,8 +20,14 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] GameManager gm;
 
+    bool isBossDead;
+
+
     [Header("Animation Stuffs")]
     [SerializeField] Animator enemyAnimator;
+
+    //[Header("Torch Stuffs")]
+    //[SerializeField] GameObject[] torches;
 
 
     private void Start()
@@ -67,7 +74,7 @@ public class Enemy : MonoBehaviour
         //enemySpawner.enemyPresent.Remove(enemyPrefab[0]);
 
         float lootRange = Random.Range(1, 100);
-        if(lootRange <= 25)
+        if(lootRange <= 5)
         {
             DropLoot();
         }
@@ -76,10 +83,19 @@ public class Enemy : MonoBehaviour
         {
             //remove blockade
             blockade.SetActive(false);
+            isBossDead = true;
+
+            gm.GetComponent<BossDeafeted>().LightUpTorches();
         }
 
         DropEXP();
         gm.GetComponent<EnemyScore>().KillCounter();
+
+        if(isBossDead)
+        {
+            Light2D playerLight = player.GetComponent<Light2D>();
+            playerLight.color = new Color(1, 1, 1);
+        }
 
     }
 

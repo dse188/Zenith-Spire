@@ -25,6 +25,10 @@ public class PlayerCombat : MonoBehaviour
     float spearTimer;
     float destroyTimer = 0;
 
+    [Header("Damage Floating Point")]
+    [SerializeField] GameObject spinSlashDamageTextPrefab;
+    
+
 
     private void Start()
     {
@@ -77,6 +81,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(weaponSO.attackDamage);
+            Instantiate(spinSlashDamageTextPrefab, enemy.transform.position, Quaternion.identity);
         }
     }
 

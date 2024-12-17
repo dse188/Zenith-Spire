@@ -11,6 +11,8 @@ TagManager:
   - Game Manager
   - Enemy
   - Walls
+  - Drop (Power Up)
+  - Torches
   layers:
   - Default
   - TransparentFX
@@ -45,11 +47,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2143885621
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Foreground
     uniqueID: 2449749383
