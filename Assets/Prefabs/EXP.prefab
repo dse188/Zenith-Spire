@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1935777467
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 513906670, guid: 33417e9110effac449cc24907be6a371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expMagnetRadius: 1.5
-  expFlySpeed: 35
+  expFlySpeed: 15
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
