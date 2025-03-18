@@ -301,10 +301,10 @@ RectTransform:
   - {fileID: 1738463203}
   m_Father: {fileID: 196445480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 70}
+  m_SizeDelta: {x: -420, y: -806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31674113
 MonoBehaviour:
@@ -32518,10 +32518,10 @@ RectTransform:
   - {fileID: 871964572}
   m_Father: {fileID: 196445480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -145.23947}
-  m_SizeDelta: {x: 400, y: 70}
+  m_SizeDelta: {x: -420, y: -806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360358058
 MonoBehaviour:
@@ -41301,10 +41301,10 @@ RectTransform:
   - {fileID: 68080391}
   m_Father: {fileID: 196445480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -346}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: -620, y: -836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577277538
 MonoBehaviour:
@@ -49006,10 +49006,10 @@ RectTransform:
   - {fileID: 2048756896}
   m_Father: {fileID: 196445480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 138}
-  m_SizeDelta: {x: 400, y: 70}
+  m_SizeDelta: {x: -420, y: -806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &983698582
 MonoBehaviour:
@@ -56538,10 +56538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
